@@ -61,7 +61,7 @@
 
         }
 
-        details {
+        details:not(.no-box){
             margin-top: 20px;
             margin-bottom: 20px;;
 
@@ -72,10 +72,10 @@
 
             border: 2px solid black;
             border-radius: 10px;
-            
         }
+
         details > summary {
-             margin-left: 0px; 
+            margin-left: 0px; 
             /* margin-left: -45px; */
             
             padding-bottom: 3px;
@@ -148,6 +148,25 @@
 
         <details>
             <summary>
+                <h2 style="display:inline; justify-content: center;">
+                    Stats
+                </h2>
+            </summary>
+            
+            <section>
+                <p>
+                    Extra Credit:&nbsp; 20 pts
+                </p>
+                <p style="margin-top:30px">
+                    (At 100 points of EC you will get a free slice of pizza)
+                </p>
+            </section>
+            
+        </details>
+        
+
+        <details>
+            <summary>
                 <h2 style="display:inline">
                     Resources
                 </h2>
@@ -208,6 +227,7 @@
             </section>
             
         </details>
+
         
         <br>
         <h2 class="sticky">Homework</h2>
@@ -241,7 +261,7 @@
             
         </details>
 
-        <details open>
+        <details>
             <summary>
                 <h2 style="display:inline">
                     Lesson 3 Homework (More if practice)
@@ -257,6 +277,49 @@
                     2.&nbsp; Extra Credit:
                 </p>
                 <img src="./python-problem-2.png" alt="" style="width:70%">
+            </section>
+            
+        </details>
+
+        <details open>
+            <summary>
+                <h2 style="display:inline">
+                    Lesson 4 Homework (Functions, arguments and return)
+                </h2>
+            </summary>
+            
+            <section>
+                <p>
+                    Please do all of the following:
+                </p>
+                <p>
+                    1.&nbsp; Please solve 
+                    <a href="https://www.hackerrank.com/challenges/write-a-function/problem?isFullScreen=true">this</a>
+                    HackerRank problem relating to writing a function and if statements 
+                </p>
+                <p>
+                    2.&nbsp; Please solve 
+                    <a href="https://codingbat.com/prob/p194053">this</a>
+                    codingbat challenge (hint: built in `len()` function returns length of a string),
+                </p>
+                <p>
+                    3.&nbsp; Please solve this:
+                    <a href="https://codingbat.com/prob/p162058">this</a>
+                    codingbat challenge
+                </p>
+                <p style="margin-bottom:5px">
+                    4.&nbsp; do the following exercise from the slides:
+                </p>
+                <img src="./fnexcercise.png" alt="" style="width:70%">
+
+                <p style="margin-bottom:5px">
+                    5.&nbsp; Extra Credit:
+                </p>
+                <img src="./factorial_function.png" alt="">
+                <details class="no-box" style="margin-left:35px">
+                    <summary style="margin-left:-35px"> Hint </summary>
+                    you can call functions recursively, meaning you can call the function you are currently in from within itself
+                </details>
             </section>
             
         </details>
