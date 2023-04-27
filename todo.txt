@@ -3,5 +3,6 @@
 Ideas:
 
  - fullscreen button on bubble sections to make them take up the whole page (with animations)
+ - come to think of it also animate opening the bubbles
  
  - maybe make bubble sections a component, either by moving to svelte or learning web-components (in keeping w/ vanilla html css)
