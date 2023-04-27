@@ -44,7 +44,7 @@
         }
         
         p {
-            
+
             /* margin:6px 0; */
         }
         li {
@@ -140,12 +140,7 @@
 
 
     <script defer>
-        // collapseButtons = document.getElementById(".collapse-button")
-        // collapseButtons.forEach(collapseButton => {
-        //     collapseButton.addEventListener("click", (e)=> {
-        //         e.currentTarget.toggleClass("expanded")
-        //     })
-        // });
+
     </script>
 </head>
 
@@ -246,313 +241,316 @@
         </details>
 
         <br>
-        <h2 class="sticky">Lesson Materials/Recap</h2>
 
-        <details >
-            <summary>
-                <h2 style="display:inline">
-                    Boolean logic review
-                </h2>
-            </summary>
-            <section>
-                <div style="white-space: pre-line; line-height: 110%;">Three if related things:
-                    ```
-                    if boolean_value:
-                    elif boolean_value:
-                    else:
-                    ```
+        <div>
+            <h2 class="sticky">Lesson Materials/Recap</h2>
 
-                    if `boolean_value` evaluates to True, then what's in the `if boolean_value` statement will run. Then the interpreter will skip to the end of the whole thing
+            <details >
+                <summary>
+                    <h2 style="display:inline">
+                        Boolean logic review
+                    </h2>
+                </summary>
+                <section>
+                    <div style="white-space: pre-line; line-height: 110%;">Three if related things:
+                        ```
+                        if boolean_value:
+                        elif boolean_value:
+                        else:
+                        ```
 
-                    if `boolean_value` evaluates to False, then what's in the `if boolean_value` statement will not run, and the interpreter will skip what's in the if block and check the next elif. if theres no elif it will run what's in the next else block. if theres no else it will keep going with whatever code is above the else block.
+                        if `boolean_value` evaluates to True, then what's in the `if boolean_value` statement will run. Then the interpreter will skip to the end of the whole thing
 
-
-
-                    
-                    OK, but how do we set whether `boolean_value` evaluates to True or False?
-                    
-                    we need to use an expression that evaluates to a boolean (evaluates to True or False)
-
-                    an expression is made from combining:&nbsp; literals, variables (which evaluate to literals), functions (which evaluate to literals), and operators (which evaluate to literals)
-
-                    expressions all eventually evaluate to 1 literal value. (eg: 1, 2, 2.0, "Hello", True, False)
-
-                    a <b>boolean expression</b> is an expression that evaluates to a boolean literal.
-                    Reminder: a boolean is a literal that represents either True or False
-
-
-                    Here are the 9 main built in boolean operators that we have learned (<a href="https://www.w3schools.com/python/python_operators.asp">Full list of operators</a>)
-                    We can use these in our boolean expressions:
-
-                    1.&nbsp;&nbsp; a <b>></b> b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns True if a is greater than b, False otherwise). 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b are usually numbers)
-                    
-                    2.&nbsp;&nbsp; a <b><</b> b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns True if a is less than b, False otherwise). 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b are usually numbers)
-                    
-                    ^ there are also >= and <= variants of the above
-
-
-                    3.&nbsp;&nbsp; a <b>==</b> b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns True a if is the equivilent value as b, False otherwise).
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b could be any type of literal)
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eg:&nbsp; `1 == 1.0` evaluates to <b>True</b>,&nbsp; `1 == 1.5` evaluates to <b>False</b>.
-                    
-                    4.&nbsp;&nbsp; a <b>!=</b> b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns the opposite of a == b) if `a == b` is True, this returns False, 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and vice versa.&nbsp; This is the same thing as saying `not (a == b)`
-
-
-                    5.&nbsp;&nbsp; a <b>and</b> b &nbsp;&nbsp;&nbsp;&nbsp; (returns True if a is True and b is True, returns False otherwise).
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b are both booleans)
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eg:&nbsp; `True and False` evaluates to <b>False</b>,&nbsp; 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`True and True` evaluates to <b>True</b>.
-                    
-                    6.&nbsp;&nbsp; a <b>or</b> b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns False if both a and b are False, True otherwise).
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b are both booleans)
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(equivalent to ```not( (not a) and (not b) )``` )
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eg:&nbsp; `True or False` evaluates to <b>True</b>,&nbsp; 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`True or True` evaluates to <b>True</b>,
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`False or False` evaluates to <b>False</b>.
-
-                    7.&nbsp;&nbsp; <b>not</b> a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns False if a is True, returns True if a is False).
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b are both booleans)
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eg:&nbsp; `not True` evaluates to <b>False</b>,&nbsp; 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`not False` evaluates to <b>True</b>.
-
-                    <img src="./codecademy_truth_table.png" alt="" style="width:70%">
-                    
-                    Make sure you understand these.
-                    You can also string these expressions together.
-                    eg: ` (a > 0) and (b > 0) `
-                    this works because `>` is a boolean operator so `a > 0` returns a boolean value, and `and` needs boolean values on both sides to work
-                    If you string to many together it can get confusing, so make sure to use parentheses 
-                    
-
-                    But remember at the end of the day, it all evaluates to one boolean value (True or False), and the place you put the expression, such as an if statement, just sees that value, because the expression will be evaluated before the if statement sees it.
+                        if `boolean_value` evaluates to False, then what's in the `if boolean_value` statement will not run, and the interpreter will skip what's in the if block and check the next elif. if theres no elif it will run what's in the next else block. if theres no else it will keep going with whatever code is above the else block.
 
 
 
-                </div>
-            </section>
-        </details>
-        
-        <details open>
-            <summary>
-                <h2 style="display:inline">
-                    For loops lesson
-                </h2>
-            </summary>
-            <section>
-                <img src="./for_loops_lesson_recap.png" alt="lesson screenshot">
-            </section>
-        </details>
+                        
+                        OK, but how do we set whether `boolean_value` evaluates to True or False?
+                        
+                        we need to use an expression that evaluates to a boolean (evaluates to True or False)
 
-        
-        <br>
-        <h2 class="sticky">Homework</h2>
+                        an expression is made from combining:&nbsp; literals, variables (which evaluate to literals), functions (which evaluate to literals), and operators (which evaluate to literals)
 
-        <details> 
-            <summary>
-                <h2 style="display:inline">
-                    Lesson 2 Homework
-                </h2>
-            </summary>
+                        expressions all eventually evaluate to 1 literal value. (eg: 1, 2, 2.0, "Hello", True, False)
+
+                        a <b>boolean expression</b> is an expression that evaluates to a boolean literal.
+                        Reminder: a boolean is a literal that represents either True or False
+
+
+                        Here are the 9 main built in boolean operators that we have learned (<a href="https://www.w3schools.com/python/python_operators.asp">Full list of operators</a>)
+                        We can use these in our boolean expressions:
+
+                        1.&nbsp;&nbsp; a <b>></b> b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns True if a is greater than b, False otherwise). 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b are usually numbers)
+                        
+                        2.&nbsp;&nbsp; a <b><</b> b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns True if a is less than b, False otherwise). 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b are usually numbers)
+                        
+                        ^ there are also >= and <= variants of the above
+
+
+                        3.&nbsp;&nbsp; a <b>==</b> b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns True a if is the equivilent value as b, False otherwise).
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b could be any type of literal)
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eg:&nbsp; `1 == 1.0` evaluates to <b>True</b>,&nbsp; `1 == 1.5` evaluates to <b>False</b>.
+                        
+                        4.&nbsp;&nbsp; a <b>!=</b> b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns the opposite of a == b) if `a == b` is True, this returns False, 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and vice versa.&nbsp; This is the same thing as saying `not (a == b)`
+
+
+                        5.&nbsp;&nbsp; a <b>and</b> b &nbsp;&nbsp;&nbsp;&nbsp; (returns True if a is True and b is True, returns False otherwise).
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b are both booleans)
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eg:&nbsp; `True and False` evaluates to <b>False</b>,&nbsp; 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`True and True` evaluates to <b>True</b>.
+                        
+                        6.&nbsp;&nbsp; a <b>or</b> b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns False if both a and b are False, True otherwise).
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b are both booleans)
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(equivalent to ```not( (not a) and (not b) )``` )
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eg:&nbsp; `True or False` evaluates to <b>True</b>,&nbsp; 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`True or True` evaluates to <b>True</b>,
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`False or False` evaluates to <b>False</b>.
+
+                        7.&nbsp;&nbsp; <b>not</b> a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (returns False if a is True, returns True if a is False).
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a and b are both booleans)
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eg:&nbsp; `not True` evaluates to <b>False</b>,&nbsp; 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`not False` evaluates to <b>True</b>.
+
+                        <img src="./codecademy_truth_table.png" alt="" style="width:70%">
+                        
+                        Make sure you understand these.
+                        You can also string these expressions together.
+                        eg: ` (a > 0) and (b > 0) `
+                        this works because `>` is a boolean operator so `a > 0` returns a boolean value, and `and` needs boolean values on both sides to work
+                        If you string to many together it can get confusing, so make sure to use parentheses 
+                        
+
+                        But remember at the end of the day, it all evaluates to one boolean value (True or False), and the place you put the expression, such as an if statement, just sees that value, because the expression will be evaluated before the if statement sees it.
+
+
+
+                    </div>
+                </section>
+            </details>
             
-            <section>
-                <p>
-                    1.&nbsp; Please do the quiz linked at the bottom of <a href="https://www.py4e.com/lessons/logic"> this page</a>.
-                </p>
-        
-                <p> 
-                    2.&nbsp; Please do 
-                    <a href="https://www.hackerrank.com/challenges/py-if-else/problem?isFullScreen=true">this problem</a> 
-                    on HackerRank. 
-                    (You will need to make an account sorry).
-                </p>
-                <p style="margin-top:5px;">
-                    Write all your code inside of the provided if statement block (under
-                    <code>if __name__ == main:</code>)
-                </p>
-                <p>
-                    <u>Optional extra homework:</u>&nbsp; feel free to do the next hackerrank challenge after you are done with the one linked above. (It should be the one called "Arithmetic Operations")
-                </p>
-            </section>
-            
-        </details>
+            <details open>
+                <summary>
+                    <h2 style="display:inline">
+                        For loops lesson
+                    </h2>
+                </summary>
+                <section>
+                    <img src="./for_loops_lesson_recap.png" alt="lesson screenshot">
+                </section>
+            </details>
+        </div>
 
-        <details>
-            <summary>
-                <h2 style="display:inline">
-                    Lesson 3 Homework (More if practice)
-                </h2>
-            </summary>
-            
-            <section>
-                <p>
-                    1.&nbsp; Please solve the following Problem completely on your own:
-                </p>
-                <img src="./python-if-image-1.png" alt="">
-                <p>
-                    2.&nbsp; Extra Credit:
-                </p>
-                <img src="./python-problem-2.png" alt="" style="width:70%">
-            </section>
-            
-        </details>
+        <div>
+            <h2 class="sticky">Homework</h2>
 
-        <details>
-            <summary>
-                <h2 style="display:inline">
-                    Lesson 4 Homework (Functions, arguments and return)
-                </h2>
-            </summary>
-            
-            <section>
-                <p>
-                    Please do all of the following:
-                </p>
-                <p>
-                    1.&nbsp; Please solve 
-                    <a href="https://www.hackerrank.com/challenges/write-a-function/problem?isFullScreen=true">this</a>
-                    HackerRank problem relating to writing a function and if statements 
-                </p>
-                <p>
-                    2.&nbsp; Please solve 
-                    <a href="https://codingbat.com/prob/p194053">this</a>
-                    codingbat challenge (hint: built in `len()` function returns length of a string),
-                </p>
-                <p>
-                    3.&nbsp; Please solve this:
-                    <a href="https://codingbat.com/prob/p162058">this</a>
-                    codingbat challenge
-                </p>
-                <p style="margin-bottom:5px">
-                    4.&nbsp; do the following exercise from the slides:
-                </p>
-                <img src="./fnexcercise.png" alt="" style="width:70%">
-
-                <p style="margin-bottom:5px">
-                    5.&nbsp; <s>Extra Credit</s> No longer Extra Credit:
-                </p>
-                <img src="./factorial_function.png" alt="">
-                <details class="no-box" style="margin-left:35px">
-                    <summary style="margin-left:-35px"> Hint </summary>
-                    you can call functions recursively, meaning you can call the function you are currently in from within itself
-                </details>
-
-                <p style="margin-bottom:5px">
-                    6.&nbsp; Extra Credit: do <a href="https://codingbat.com/prob/p162058">this</a> coding bat challenge in 1 line of code. 
-                    Read the section below this to help you out. 
-                    
-                </p>
-                <p style="margin-top:5px;">
-                    Hint: they already got it down to 3 lines right?, 
-                    how could you use the same strategy as them to do it in 1 line (return a boolean directly that is derrived from a boolean expression made using ands/ors )
-                </p>
-            </section>
-            
-        </details>
-
-        
-
-        <details >
-            <summary>
-                <h2 style="display:inline">
-                    Lesson 6-ish Homework (While loops)
-                </h2>
-            </summary>
-            
-            <section>
-                <p>
-                    Please do all of the following:
-                </p>
+            <details> 
+                <summary>
+                    <h2 style="display:inline">
+                        Lesson 2 Homework
+                    </h2>
+                </summary>
                 
-                <p style="margin-bottom:5px">
-                    1.&nbsp; Please solve 
-                    <a href="https://www.hackerrank.com/challenges/python-print/problem?isFullScreen=true">this</a>
-                    HackerRank problem.
-                    
-                </p>
-                <p style="margin-bottom:5px; margin-top:5px;">
-                    Two facts that may or may not come in handy: 
-                </p>
-                <p style="margin-bottom:10px; margin-top:10px; margin-left:20px;">
-                    1)&nbsp; ``` my_string_var += "something" ``` is shorthand for ```my_string_var = my_string_var + "something" ``` and can help you build up a string
-                </p>
-                <p style="margin-bottom:5px; margin-top:5px; margin-left:20px;">
-                    2)&nbsp; ``` print("some text", end="") ``` will print to the console without making a new line
-                </p>
-
-                <!-- <p style="margin-bottom:5px">
-                    2.&nbsp;
-                    fizzbuzz (I will save for later for for loops)
-                </p> -->
-                
-                <p style="margin-bottom:5px">
-                    2.&nbsp;
-                    Write a function that takes in a number as a parameter and returns the factorial of the number. The function should have a while loop inside it and is not allowed to call itself
-                </p>
-                <p style="margin-bottom:5px; margin-top:5px;">
-                    Tips: 1) look at slides for example of how they use while loop. 2) if you need to debug your code put print statements in the while loop that print out each of the variables (eg `print(x,y,z)`), so you can follow in your head what code is run when and how all the values are changing
-                </p>
-
-                <p style="margin-bottom:5px">
-                    3.&nbsp; Extra Credit:
-                    Get 100% on  
-                    <a href="https://www.khanacademy.org/computing/computer-programming/programming/looping/e/review-loops">this quiz about while loops</a>.
-                    (it's written in javascript though)
-                </p>
-
-
-            </section>
+                <section>
+                    <p>
+                        1.&nbsp; Please do the quiz linked at the bottom of <a href="https://www.py4e.com/lessons/logic"> this page</a>.
+                    </p>
             
-        </details>
-
-        <details open>
-            <summary>
-                <h2 style="display:inline">
-                    Lesson 7-ish Homework (for loops + string indexing)
-                </h2>
-            </summary>
-            
-            <section>
-                <p>
-                    1. &nbsp; Make yet another function to calculate the factorial, this time using for loops instead of while loops. 
-                    Also try to use good variable names if you can.
-                </p>
-                
-                <p>
-                    2. &nbsp; Do 
-                    <a href="https://www.hackerrank.com/challenges/find-a-string/problem?isFullScreen=true"> this</a>
-                    hackerrank problem.
-                </p>
-                <p style="margin-top:10px;margin-left: 40px;">
-                    This one is a bit hard, but you can do it using what we've learned so far (see class recap screenshot at top of page): namely using for loop and string slicing (the thing with string_var[start:end:step]). of course you can use variables inside the brackets
-                </p>
-                <p style="margin-top:10px; margin-left: 40px;">Tips:</p>
-                
-                <div style="margin-top:0px; margin-left: 45px; border-left: 1px solid black; padding-left: 40px">
+                    <p> 
+                        2.&nbsp; Please do 
+                        <a href="https://www.hackerrank.com/challenges/py-if-else/problem?isFullScreen=true">this problem</a> 
+                        on HackerRank. 
+                        (You will need to make an account sorry).
+                    </p>
                     <p style="margin-top:5px;">
-                        - print statements. Print what is going on at each stage of the loop, print what variables are and see if they are what you'd expect.
+                        Write all your code inside of the provided if statement block (under
+                        <code>if __name__ == main:</code>)
                     </p>
-                    <p style="margin-top:5px; margin-left: 70px;">
-                        - However once you're ready to submit comment out the print statements so hackerrank accepts it
+                    <p>
+                        <u>Optional extra homework:</u>&nbsp; feel free to do the next hackerrank challenge after you are done with the one linked above. (It should be the one called "Arithmetic Operations")
                     </p>
-                    <p style="margin-top:10px;">
-                        - use pointless variables (with good names): ie if a line of code gets to complicated then you can extract parts of it into named variables. This way you can edit each part of it separately and also test each part is what you would expect by printing it.
-                    </p>
-                </div>
-                <p style="margin-top:15px; margin-left: 40px;">
-                    try your best if you don't succeed we'll go over it in class
-                </p>
+                </section>
+                
+            </details>
 
-                <p>
-                    3. &nbsp; Extra Credit: Do 3 or more 
-                    <a href="https://codingbat.com/python">codingbat</a>
-                    problems from any section other than warmup
-                </p>
+            <details>
+                <summary>
+                    <h2 style="display:inline">
+                        Lesson 3 Homework (More if practice)
+                    </h2>
+                </summary>
+                
+                <section>
+                    <p>
+                        1.&nbsp; Please solve the following Problem completely on your own:
+                    </p>
+                    <img src="./python-if-image-1.png" alt="">
+                    <p>
+                        2.&nbsp; Extra Credit:
+                    </p>
+                    <img src="./python-problem-2.png" alt="" style="width:70%">
+                </section>
+                
+            </details>
 
-            </section>
-        </details>
+            <details>
+                <summary>
+                    <h2 style="display:inline">
+                        Lesson 4 Homework (Functions, arguments and return)
+                    </h2>
+                </summary>
+                
+                <section>
+                    <p>
+                        Please do all of the following:
+                    </p>
+                    <p>
+                        1.&nbsp; Please solve 
+                        <a href="https://www.hackerrank.com/challenges/write-a-function/problem?isFullScreen=true">this</a>
+                        HackerRank problem relating to writing a function and if statements 
+                    </p>
+                    <p>
+                        2.&nbsp; Please solve 
+                        <a href="https://codingbat.com/prob/p194053">this</a>
+                        codingbat challenge (hint: built in `len()` function returns length of a string),
+                    </p>
+                    <p>
+                        3.&nbsp; Please solve this:
+                        <a href="https://codingbat.com/prob/p162058">this</a>
+                        codingbat challenge
+                    </p>
+                    <p style="margin-bottom:5px">
+                        4.&nbsp; do the following exercise from the slides:
+                    </p>
+                    <img src="./fnexcercise.png" alt="" style="width:70%">
+
+                    <p style="margin-bottom:5px">
+                        5.&nbsp; <s>Extra Credit</s> No longer Extra Credit:
+                    </p>
+                    <img src="./factorial_function.png" alt="">
+                    <details class="no-box" style="margin-left:35px">
+                        <summary style="margin-left:-35px"> Hint </summary>
+                        you can call functions recursively, meaning you can call the function you are currently in from within itself
+                    </details>
+
+                    <p style="margin-bottom:5px">
+                        6.&nbsp; Extra Credit: do <a href="https://codingbat.com/prob/p162058">this</a> coding bat challenge in 1 line of code. 
+                        Read the section below this to help you out. 
+                        
+                    </p>
+                    <p style="margin-top:5px;">
+                        Hint: they already got it down to 3 lines right?, 
+                        how could you use the same strategy as them to do it in 1 line (return a boolean directly that is derrived from a boolean expression made using ands/ors )
+                    </p>
+                </section>
+                
+            </details>
+
+            
+
+            <details >
+                <summary>
+                    <h2 style="display:inline">
+                        Lesson 6-ish Homework (While loops)
+                    </h2>
+                </summary>
+                
+                <section>
+                    <p>
+                        Please do all of the following:
+                    </p>
+                    
+                    <p style="margin-bottom:5px">
+                        1.&nbsp; Please solve 
+                        <a href="https://www.hackerrank.com/challenges/python-print/problem?isFullScreen=true">this</a>
+                        HackerRank problem.
+                        
+                    </p>
+                    <p style="margin-bottom:5px; margin-top:5px;">
+                        Two facts that may or may not come in handy: 
+                    </p>
+                    <p style="margin-bottom:10px; margin-top:10px; margin-left:20px;">
+                        1)&nbsp; ``` my_string_var += "something" ``` is shorthand for ```my_string_var = my_string_var + "something" ``` and can help you build up a string
+                    </p>
+                    <p style="margin-bottom:5px; margin-top:5px; margin-left:20px;">
+                        2)&nbsp; ``` print("some text", end="") ``` will print to the console without making a new line
+                    </p>
+
+                    <!-- <p style="margin-bottom:5px">
+                        2.&nbsp;
+                        fizzbuzz (I will save for later for for loops)
+                    </p> -->
+                    
+                    <p style="margin-bottom:5px">
+                        2.&nbsp;
+                        Write a function that takes in a number as a parameter and returns the factorial of the number. The function should have a while loop inside it and is not allowed to call itself
+                    </p>
+                    <p style="margin-bottom:5px; margin-top:5px;">
+                        Tips: 1) look at slides for example of how they use while loop. 2) if you need to debug your code put print statements in the while loop that print out each of the variables (eg `print(x,y,z)`), so you can follow in your head what code is run when and how all the values are changing
+                    </p>
+
+                    <p style="margin-bottom:5px">
+                        3.&nbsp; Extra Credit:
+                        Get 100% on  
+                        <a href="https://www.khanacademy.org/computing/computer-programming/programming/looping/e/review-loops">this quiz about while loops</a>.
+                        (it's written in javascript though)
+                    </p>
+
+
+                </section>
+                
+            </details>
+
+            <details open>
+                <summary>
+                    <h2 style="display:inline">
+                        Lesson 7-ish Homework (for loops + string indexing)
+                    </h2>
+                </summary>
+                
+                <section>
+                    <p>
+                        1. &nbsp; Make yet another function to calculate the factorial, this time using for loops instead of while loops. 
+                        Also try to use good variable names if you can.
+                    </p>
+                    
+                    <p>
+                        2. &nbsp; Do 
+                        <a href="https://www.hackerrank.com/challenges/find-a-string/problem?isFullScreen=true"> this</a>
+                        hackerrank problem.
+                    </p>
+                    <p style="margin-top:10px;margin-left: 40px;">
+                        This one is a bit hard, but you can do it using what we've learned so far (see class recap screenshot at top of page): namely using for loop and string slicing (the thing with string_var[start:end:step]). of course you can use variables inside the brackets
+                    </p>
+                    <p style="margin-top:10px; margin-left: 40px;">Tips:</p>
+                    
+                    <div style="margin-top:0px; margin-left: 45px; border-left: 1px solid black; padding-left: 40px">
+                        <p style="margin-top:5px;">
+                            - print statements. Print what is going on at each stage of the loop, print what variables are and see if they are what you'd expect.
+                        </p>
+                        <p style="margin-top:5px; margin-left: 70px;">
+                            - However once you're ready to submit comment out the print statements so hackerrank accepts it
+                        </p>
+                        <p style="margin-top:10px;">
+                            - use pointless variables (with good names): ie if a line of code gets to complicated then you can extract parts of it into named variables. This way you can edit each part of it separately and also test each part is what you would expect by printing it.
+                        </p>
+                    </div>
+                    <p style="margin-top:15px; margin-left: 40px;">
+                        try your best if you don't succeed we'll go over it in class
+                    </p>
+
+                    <p>
+                        3. &nbsp; Extra Credit: Do 3 or more 
+                        <a href="https://codingbat.com/python">codingbat</a>
+                        problems from any section other than warmup
+                    </p>
+
+                </section>
+            </details>
+        </div>
         
         <br style="margin-bottom: 40vh;">
 
