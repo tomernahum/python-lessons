@@ -1,0 +1,3 @@
+Rock paper scissors program
+
+automate the boring stuff list of projects have him pick a project
