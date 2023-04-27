@@ -1,4 +1,5 @@
 
+- make text smaller on mobile viewport or something
 
 Ideas:
 
