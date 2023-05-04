@@ -51,3 +51,42 @@ for i in [0,1,2,3,4]:
 
 myVar = 5
 print( f"Tomer {myVar}")
+
+
+
+
+print('Before')
+for i in [9, 41, 12, 3, 74, 15] :
+    print(i)
+    if i == 9:
+        print("NINE FOUND")
+
+print('After')
+
+
+
+blah = 0
+
+numbers = [0, 3, 9, 20]
+
+[0,1,2,3]
+
+
+previous_thing = 0
+for thing in numbers:
+    
+    if thing > previous_thing:
+        pass
+
+
+    previous_thing = thing
+
+
+
+#what range returns:
+
+range(10) 
+#returns 
+[0,1,2,3,4,5,6,7,8,9]
+
+
