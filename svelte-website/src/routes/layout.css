@@ -1,0 +1,37 @@
+
+/* Global Styling */
+:root {
+    /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+
+
+    /* font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%; */
+
+    color-scheme: light;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+
+    /* background-color: var(--main-background); */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin:0;
+}
+
+.no-transition * {
+    transition: all 0s;
+}
