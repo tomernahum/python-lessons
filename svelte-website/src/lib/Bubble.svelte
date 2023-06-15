@@ -5,7 +5,7 @@
     export let open:boolean = false;
     export let title:string;
 
-    
+    /*
     // Bug: will share the state among bubbles with the same title. // only way i can think of to make a unique id is to generate one from the dom. This is too much work for now
     const id = title
     let ready = false;
@@ -44,6 +44,7 @@
         if (ready)
             saveState()
     }
+    */
 
 
 </script>
@@ -100,7 +101,7 @@
         /* border-left: 2px solid rgb(109, 109, 109); */
 
 
-        padding-top: 15px;
+        /* padding-top: 15px; */
         padding-bottom: 5px;
     }
 

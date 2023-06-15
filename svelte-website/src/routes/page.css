@@ -1,5 +1,15 @@
 
+@import "prism.css";
 
 li {
     margin-bottom: 24px;
+}
+
+code {
+    background-color: lightgray;
+}
+
+pre {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
 }

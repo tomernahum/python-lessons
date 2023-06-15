@@ -3,9 +3,11 @@
 
 <script lang="ts">
     export let text:string
+
+    export let style=""
 </script>
 
-<h2 class="sticky">
+<h2 class="sticky" style={style}>
     {text}
 </h2>
 
@@ -23,7 +25,7 @@
         padding-bottom: 4px;
         padding-top:10px;
 
-        margin-bottom: -14px;
+        margin-bottom: var(--margin-bottom, 0);
         margin-top: 0;
         
     }
