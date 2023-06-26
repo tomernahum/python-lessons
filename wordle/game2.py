@@ -3,17 +3,6 @@ from typing import List
 from game import getGuess, getReadout, prettyPrintReadout, getMatches, ReadoutValues, prettyPrintLetter
 from words import LETTERS
 
-# letters_knowledge = {}
-def updateLettersKnowledge(guess_word, solution_word, letters_knowledge:dict):
-    inexact_match_indexes, exact_match_indexes = getMatches(guess_word, solution_word)
-
-    for i, letter in enumerate(guess_word):
-        if i in exact_match_indexes:
-            letters_knowledge[letter] = ReadoutValues.exact_match
-        elif i in inexact_match_indexes and letters_knowledge.get(letter) != ReadoutValues.exact_match:
-            letters_knowledge[letter] = ReadoutValues.inexact_match
-        else:
-            letters_knowledge[letter] = ReadoutValues.no_match
 
 
 class Guess:
@@ -39,17 +28,29 @@ def playGameV2(solution_word, allow_invalid_words=False):
         printScreen(past_guesses, letters_knowledge)
         
         if guess.word == solution_word:
-            print(f"Congratulations! You won in {i} moves")
+            print(f"Congratulations! You won in {i+1} guesses")
             return
         
 
     print(f"You lose, the word was {solution_word}")
 
+def updateLettersKnowledge(guess_word, solution_word, letters_knowledge:dict):
+    inexact_match_indexes, exact_match_indexes = getMatches(guess_word, solution_word)
+
+    for i, letter in enumerate(guess_word):
+        if i in exact_match_indexes:
+            letters_knowledge[letter] = ReadoutValues.exact_match
+        elif i in inexact_match_indexes and letters_knowledge.get(letter) != ReadoutValues.exact_match:
+            letters_knowledge[letter] = ReadoutValues.inexact_match
+        else:
+            letters_knowledge[letter] = ReadoutValues.no_match
+
 
 def printScreen(guesses:List[Guess], letters_knowledge:dict, overwrite=True):
     if overwrite:
         #TODO Actually Overwrite previous board / clear terminal
-        print("\n\n\n")
+        # print("")
+        pass
 
     print("")
     for guess in guesses:
