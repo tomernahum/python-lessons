@@ -15,7 +15,9 @@ class Guess:
 
 
 
-def playGameV2(solution_word, allow_invalid_words=False):
+def playGameV2(solution_word, allow_invalid_words=False, spoil=False):
+    if spoil: print("solution word:", solution_word)
+    
     past_guesses = []
     letters_knowledge = {}
     for i in range(5):

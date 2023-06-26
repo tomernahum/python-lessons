@@ -76,13 +76,41 @@ def getMatches(guess, solution):
 
     inexact_match_indexes = []
     exact_match_indexes = []
+    
+    """
+        for i, letter in enumerate(guess):
+            if (letter in solution): #matches
+                if guess[i] == solution[i]: #matches exactly
+                    exact_match_indexes.append(i)
+                else: # doesn't match exactly
+                    # TODO check if its repeated
+                    inexact_match_indexes.append(i)
+    """
+
+    # put all solution letters in unmatched_solution_letters
+    unmatched_solution_letters = {}
+    for letter in solution:
+        unmatched_solution_letters[letter] = unmatched_solution_letters.get(letter, 0) + 1 #get the current letter, if no current letter get 0
+    
+    #check exact matches (and eliminate from solution_letters)
     for i, letter in enumerate(guess):
-        if (letter in solution): #matches
-            if guess[i] == solution[i]: #matches exactly
-                exact_match_indexes.append(i)
-            else: # doesn't match exactly
-                # TODO check if its repeated
-                inexact_match_indexes.append(i)
+        if guess[i] == solution[i]: #matches exactly
+            exact_match_indexes.append(i)
+            # remove the letter from unmatched_solution_letters
+            unmatched_solution_letters[letter] = unmatched_solution_letters.get(letter, 1) - 1
+    
+    # check inexact matches
+    for i, letter in enumerate(guess):
+        is_match = unmatched_solution_letters.get(letter, 0) >= 1
+        if is_match:
+            inexact_match_indexes.append(i)
+            # remove the letter from unmatched_solution_letters
+            unmatched_solution_letters[letter] = unmatched_solution_letters.get(letter, 1) - 1
+        
+    # if solution_letters.get(letter, 0) >= 1:
+    #         solution_letters[letter] = solution_letters.get(letter, 1) - 1
+        
+    
     return (inexact_match_indexes, exact_match_indexes)
 
 def uglyPrintReadout(guess, readout:List[ReadoutValues]):
