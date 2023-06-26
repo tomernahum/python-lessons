@@ -26,7 +26,7 @@ def playGameV1(solution_word, allow_invalid_words=False):
         prettyPrintReadout(guess, readout)
         
         if guess == solution_word:
-            print(f"Congratulations! You won in {i} moves")
+            print(f"Congratulations! You won in {i+1} guesses")
             return
     print(f"You lose, the word was {solution_word}")
 
@@ -56,6 +56,7 @@ def isRealWord(word, solution_word=None):
     return False
 
 def getReadout(guess, solution):
+
     inexact_match_indexes, exact_match_indexes = getMatches(guess, solution)
 
     readout:list[ReadoutValues] = []
@@ -70,6 +71,9 @@ def getReadout(guess, solution):
     return readout
 
 def getMatches(guess, solution):
+    
+    # BUG: repeated letters are all yellow instead of matching the count
+
     inexact_match_indexes = []
     exact_match_indexes = []
     for i, letter in enumerate(guess):
@@ -77,6 +81,7 @@ def getMatches(guess, solution):
             if guess[i] == solution[i]: #matches exactly
                 exact_match_indexes.append(i)
             else: # doesn't match exactly
+                # TODO check if its repeated
                 inexact_match_indexes.append(i)
     return (inexact_match_indexes, exact_match_indexes)
 
