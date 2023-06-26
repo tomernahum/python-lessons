@@ -15,19 +15,23 @@ class Guess:
 
 
 from words import VALID_WORDS_LIST
-def playGameV2(solution_word, valid_words=VALID_WORDS_LIST, allow_invalid_words=False, spoil=False):
-    if spoil: print("solution word:", solution_word)
-    
+def playGameV2(solution_word, valid_words=VALID_WORDS_LIST, allow_invalid_words=False, spoil=False, clearScreen=True):
+
     past_guesses = []
     letters_knowledge = {}
+
+    if clearScreen:
+        printScreen(past_guesses, letters_knowledge, overwrite=True)
     for i in range(5):
+        if spoil and i==0: print("solution word:", solution_word)
+        
         guess_word = getGuess(allow_invalid_words)
         
         guess = Guess(guess_word, solution_word)
         updateLettersKnowledge(guess.word, solution_word, letters_knowledge)
         
         past_guesses.append(guess)
-        printScreen(past_guesses, letters_knowledge)
+        printScreen(past_guesses, letters_knowledge, overwrite=clearScreen)
         
         if guess.word == solution_word:
             print(f"Congratulations! You won in {i+1} guesses")
