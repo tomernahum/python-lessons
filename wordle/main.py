@@ -24,7 +24,7 @@ def play_game_complete(
     
 
 def main():
-    quick_start = convert_answer_to_bool(input("QuickStart? "), default=True)
+    quick_start = convert_answer_to_bool(input("QuickStart? (y/n) "), default=True)
     if quick_start:
         print("")
         # play_game_complete(allow_invalid_words=True, spoil_game=True)
@@ -44,10 +44,12 @@ def main():
     solution_word = None
     if pick_word:
         solution_word = input("Solution Word: ").strip().lower()
+
+    clear_screen = convert_answer_to_bool(input("ClearScreen Mode? (y/n) "), default=False)
     
     # play game
     print("")
-    play_game_complete(solution_word, harder_words_mode, allow_invalid_words, spoil_game)
+    play_game_complete(solution_word, harder_words_mode, allow_invalid_words, spoil_game, clear_screen)
     
 
 def convert_answer_to_bool(ans:str, default=None):
