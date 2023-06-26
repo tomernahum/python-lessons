@@ -13,6 +13,7 @@ class ReadoutValues(Enum):
     exact_match = 1 #"exact_match"
     inexact_match = 2 #"inexact_match"
     no_match = 3 # "no_match"
+    unknown = 4
 
 
 def playGameV1(solution_word, allow_invalid_words=False):
@@ -130,7 +131,7 @@ def uglyPrintReadout(guess, readout:List[ReadoutValues]):
 
 def prettyPrintReadout(guess, readout:List[ReadoutValues]):
     for i,letter in enumerate(guess):
-        prettyPrintLetter(letter, readout[i])
+        prettyPrintLetter(letter, readout[i], print_no_match_as_unknown=True)
 
         # if readout[i] == ReadoutValues.exact_match:
         #     print(Back.GREEN + letter, end="")
@@ -141,11 +142,16 @@ def prettyPrintReadout(guess, readout:List[ReadoutValues]):
 
     print(Back.RESET)
 
-def prettyPrintLetter(letter, type:ReadoutValues):
+def prettyPrintLetter(letter, type:ReadoutValues, print_no_match_as_unknown=False):
     if type == ReadoutValues.exact_match:
         print(Back.GREEN + letter, end="")
     elif type == ReadoutValues.inexact_match:
         print(Back.YELLOW + letter, end="")
+    
+    elif type == ReadoutValues.no_match and not print_no_match_as_unknown:
+        color_code = Back.LIGHTBLACK_EX
+        print(color_code + letter, end="")
+    
     else:
         print(Back.RESET + letter, end="")
     print(Back.RESET, end="") 

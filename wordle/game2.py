@@ -69,11 +69,24 @@ def printScreen(guesses:List[Guess], letters_knowledge:dict, overwrite=True):
     printKeyboard(letters_knowledge)
     print("")
 
-def printKeyboard(letters_knowledge):
-    for letter in LETTERS:
-        try:
-            prettyPrintLetter(letter.upper(), letters_knowledge[letter])
-        except KeyError:
-            prettyPrintLetter(letter.upper(), ReadoutValues.no_match)
-    print("")
+def printKeyboard(letters_knowledge:"dict[str,ReadoutValues]", mode=2):
+    
+    if mode == 1:
+        for letter in LETTERS:
+            letter_readout = letters_knowledge.get(letter, ReadoutValues.unknown)
+            prettyPrintLetter(letter.upper(), letter_readout, print_no_match_as_unknown=False)
+        print("") # new line
+
+    else:
+        KEYBOARD_LETTERS = [
+            ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+            ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+            ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
+        ] #thx chatgpt
+        for row in KEYBOARD_LETTERS:
+            for letter in row:
+                letter_readout = letters_knowledge.get(letter.lower(), ReadoutValues.unknown)
+                prettyPrintLetter(letter.upper(), letter_readout, print_no_match_as_unknown=False)
+            print("") # new line
+    
 
