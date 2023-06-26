@@ -54,9 +54,12 @@ def updateLettersKnowledge(guess_word, solution_word, letters_knowledge:dict):
 
 def printScreen(guesses:List[Guess], letters_knowledge:dict, overwrite=True):
     if overwrite:
-        #TODO Actually Overwrite previous board / clear terminal
-        # print("")
-        pass
+        # print("\033[2J")
+        # print("\033[H")
+        # print("\033c")
+        import os
+        os.system('clear')
+        
 
     print("")
     for guess in guesses:
