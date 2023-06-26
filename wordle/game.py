@@ -72,8 +72,6 @@ def getReadout(guess, solution):
     return readout
 
 def getMatches(guess, solution):
-    
-    # BUG: repeated letters are all yellow instead of matching the count
 
     inexact_match_indexes = []
     exact_match_indexes = []
@@ -92,26 +90,33 @@ def getMatches(guess, solution):
     unmatched_solution_letters = {}
     for letter in solution:
         unmatched_solution_letters[letter] = unmatched_solution_letters.get(letter, 0) + 1 #get the current letter, if no current letter get 0
-    
+    # print(unmatched_solution_letters)
+
     #check exact matches (and eliminate from solution_letters)
     for i, letter in enumerate(guess):
         if guess[i] == solution[i]: #matches exactly
             exact_match_indexes.append(i)
             # remove the letter from unmatched_solution_letters
             unmatched_solution_letters[letter] = unmatched_solution_letters.get(letter, 1) - 1
-    
+    # print(unmatched_solution_letters)
+
     # check inexact matches
     for i, letter in enumerate(guess):
+        if i in exact_match_indexes: 
+            continue
+
         is_match = unmatched_solution_letters.get(letter, 0) >= 1
         if is_match:
             inexact_match_indexes.append(i)
             # remove the letter from unmatched_solution_letters
             unmatched_solution_letters[letter] = unmatched_solution_letters.get(letter, 1) - 1
-        
+    
+    # print(unmatched_solution_letters)
+
     # if solution_letters.get(letter, 0) >= 1:
     #         solution_letters[letter] = solution_letters.get(letter, 1) - 1
         
-    
+    # print(inexact_match_indexes, exact_match_indexes)
     return (inexact_match_indexes, exact_match_indexes)
 
 def uglyPrintReadout(guess, readout:List[ReadoutValues]):

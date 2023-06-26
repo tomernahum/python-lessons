@@ -40,9 +40,13 @@ def updateLettersKnowledge(guess_word, solution_word, letters_knowledge:dict):
     inexact_match_indexes, exact_match_indexes = getMatches(guess_word, solution_word)
 
     for i, letter in enumerate(guess_word):
+        letter_found_previously = letters_knowledge.get(letter) == ReadoutValues.exact_match
+        if letter_found_previously:
+            continue
+
         if i in exact_match_indexes:
             letters_knowledge[letter] = ReadoutValues.exact_match
-        elif i in inexact_match_indexes and letters_knowledge.get(letter) != ReadoutValues.exact_match:
+        elif i in inexact_match_indexes:
             letters_knowledge[letter] = ReadoutValues.inexact_match
         else:
             letters_knowledge[letter] = ReadoutValues.no_match

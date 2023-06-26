@@ -6,15 +6,25 @@ from words import POSSIBLE_SOLUTION_WORDS_LIST, VALID_WORDS_LIST
 def main():
     # config questions
     allow_invalid_words = convert_answer_to_bool(input("Allow invalid words? (y/n) "), default=False)
-    harder_words_mode = convert_answer_to_bool(input("Harder Words Mode? (y/n) "), default=False)
-    spoil_game = convert_answer_to_bool(input("Spoil the game? (y/n) "), default=False)
-    print("")
+    pick_word = convert_answer_to_bool(input("Pick your own Word? (y/n) "), default=False)
+    
+    if not pick_word:
+        harder_words_mode = convert_answer_to_bool(input("Harder Words Mode? (y/n) "), default=False)
+        spoil_game = convert_answer_to_bool(input("Spoil the game? (y/n) "), default=False)
+    else:
+        harder_words_mode = False
+        spoil_game = False
+    
 
-    if harder_words_mode:
+    if pick_word:
+        solution_word = input("Solution Word: ").strip().lower()
+    
+    elif harder_words_mode:
         solution_word = random.choice(VALID_WORDS_LIST)
     else:
         solution_word = random.choice(POSSIBLE_SOLUTION_WORDS_LIST)
-
+    
+    print("")
     playGameV2(solution_word, VALID_WORDS_LIST, allow_invalid_words=allow_invalid_words, spoil=spoil_game)
 
 
