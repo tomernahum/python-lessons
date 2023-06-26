@@ -14,8 +14,8 @@ class Guess:
         prettyPrintReadout(self.word, self.readout)
 
 
-
-def playGameV2(solution_word, allow_invalid_words=False, spoil=False):
+from words import VALID_WORDS_LIST
+def playGameV2(solution_word, valid_words=VALID_WORDS_LIST, allow_invalid_words=False, spoil=False):
     if spoil: print("solution word:", solution_word)
     
     past_guesses = []

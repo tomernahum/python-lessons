@@ -7,7 +7,7 @@ from colorama import just_fix_windows_console
 from colorama import Back
 just_fix_windows_console()
 
-from words import POSSIBLE_WORDS_LIST, VALID_WORDS_LIST
+
 
 class ReadoutValues(Enum):
     exact_match = 1 #"exact_match"
@@ -35,23 +35,24 @@ def playGameV1(solution_word, allow_invalid_words=False):
 
 
 
-
-def getGuess(allow_invalid_words=False):
+from words import VALID_WORDS_LIST
+def getGuess(allow_invalid_words=False, valid_words=VALID_WORDS_LIST, solution_word=None):
     while True:
         guess = input("Enter your guess! ").strip().lower()
         if len(guess) != 5:
             print("invalid length, must be 5")
             continue
-        if not isRealWord(guess) and not allow_invalid_words:
+        if not isRealWord(guess, valid_words, solution_word) and not allow_invalid_words:
             print("that word is not in our word bank")
             continue
         break
-    return guess;
+    return guess
 
-def isRealWord(word, solution_word=None):
-    if word in VALID_WORDS_LIST:
+
+def isRealWord(word, valid_words, solution_word=None):
+    if word in valid_words:
         return True
-    if word == solution_word: # not currently made use of in our code
+    elif word == solution_word: # not currently made use of in our code
         return True
     return False
 

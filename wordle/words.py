@@ -1,12 +1,15 @@
 
 
-VALID_WORDS_LIST = None
+# VALID_WORDS_LIST = None
 
 with open("./valid_words.txt", 'r') as file:
 	# VALID_WORDS_LIST = file.readlines()
 	VALID_WORDS_LIST = [line.rstrip('\n') for line in file]
 	
-POSSIBLE_WORDS_LIST = VALID_WORDS_LIST
+# POSSIBLE_SOLUTION_WORDS_LIST = VALID_WORDS_LIST
+
+with open("./possible_solution_words.txt", 'r') as file:
+	POSSIBLE_SOLUTION_WORDS_LIST = [line.rstrip('\n') for line in file]
 
 
 LETTERS = [
